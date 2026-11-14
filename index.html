@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MEET Ntando Mahlangu, PARALYMPIAN</title>
+<style>
+:root{--d:#1f5a2e;--m:#4f9a5a;--l:#e8f4e8;--y:#f2c94c;--yl:#fff6c9;--fs:16px;--lh:1.5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box;cursor:default!important;user-select:none;-webkit-user-select:none;-webkit-user-drag:none}
+html,body{height:100%;margin:0;overflow:hidden;background:#fff;color:var(--d);font-family:Georgia,'Times New Roman',serif}
+#app{height:100%;display:flex;flex-direction:column;gap:8px;padding:10px}
+header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;font-weight:bold}
+#hl{justify-self:start}#hr{justify-self:end;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+#ht{text-align:center;font-size:1.5em;letter-spacing:.06em;border-bottom:3px solid var(--y);padding-bottom:2px}
+.bar{height:10px;background:var(--l);border-radius:6px;overflow:hidden}#fill{height:100%;width:0;background:var(--y);transition:width .3s}
+main{flex:1;min-height:0;display:flex;gap:12px}
+.card{border:2px solid var(--l);border-radius:16px;box-shadow:0 3px 12px rgba(31,90,46,.15);padding:14px;overflow-y:auto;background:#fff;font-size:var(--fs)}
+#read{flex:3;min-width:0}#side{flex:1;min-width:0;display:flex;flex-direction:column;gap:10px}
+.ln{display:block;white-space:nowrap;position:relative;padding-left:2.4em;line-height:var(--lh)}
+.ln[data-n]::before{content:attr(data-n);position:absolute;left:0;color:var(--m);font-size:.85em}
+.hl{background:#fff2a8;border-radius:3px}
+.card{scrollbar-width:none;-ms-overflow-style:none}.card::-webkit-scrollbar{display:none}
+.ins{font-weight:bold;letter-spacing:.06em;color:var(--d)}
+.opt,.btn{font:inherit;font-size:var(--fs);color:var(--d);background:#fff;border:2px solid var(--m);border-radius:12px;padding:12px;text-align:left}
+.opt{display:flex;align-items:center;gap:10px;width:100%;flex:1 0 auto}
+.badge{background:var(--l);border:2px solid var(--m);border-radius:50%;min-width:2em;height:2em;display:inline-flex;align-items:center;justify-content:center;font-weight:bold}
+.opt.sel{background:var(--yl);border-color:var(--y)}
+.opt.ok{background:#cdeccd;border-color:#2e8b3e}.opt.bad{background:#f6c9c9;border-color:#c0392b}
+.btn{background:var(--m);color:#fff;font-weight:bold;text-align:center;padding:10px 14px}
+.btn.alt{background:#fff;color:var(--d)}
+.btn:disabled{opacity:.4}
+.row{display:flex;gap:8px;flex-wrap:wrap}.row .btn{flex:1}
+.lab{color:var(--m);font-weight:bold}
+.wide{max-width:900px;margin:0 auto;width:100%}
+ul{margin:.4em 0;padding-left:1.4em}li{margin:.3em 0}
+h2{margin:.2em 0 .5em}
+@media(max-width:700px){main{flex-direction:column}#read{flex:1 1 50%}#side{flex:1 1 50%}header{font-size:.8em}}
+</style></head><body>
+<div id="app">
+<header><div id="hl"></div><div id="ht">🏅 <span style="color:var(--m)">MEET</span> Ntando Mahlangu, <span style="color:var(--m)">PARALYMPIAN</span> 🏅</div>
+<div id="hr"><span id="clock">00:00</span><button class="btn" id="bs" style="padding:4px 10px">Start</button><button class="btn alt" id="bp" style="padding:4px 10px">Pause</button><span id="sc"></span></div></header>
+<div class="bar"><div id="fill"></div></div>
+<main><div id="read" class="card"></div><div id="side" class="card"></div></main>
+</div>
+<script>
+const P=[
+[["In 2016, aged 14, Ntando Mahlangu, an amputee runner, did what many people his age would love to do: he became a silver medallist at the Paralympics in Rio.","q1"],["Ntando is from South Africa, where, in 2012, he received his first blades -the equipment he wears which helps him run-from Jumping Kids.","q2"],["This organisation gives young people like Ntando the chance to do something they were unable to do before.",""]],
+[["In an interview Ntando says his disability has never been a problem for him: “I was always active.",""],["But before he got his running blades, Ntando couldn’t walk for long distances.",""],["He played football with his friends, but he was shorter than them ‘and sometimes there were disadvantages,’ he says.","q3"],["Just four years after getting his blades, however, Ntando was one of the youngest competitors at the Rio Paralympics and he now often takes part in competitions for para-athletes.","q4"]],
+[["Ntando has been very successful.",""],["He’s won several medals and has broken a world record in his sport.","q5"],["Although he’s making excellent progress at the moment, Ntando doesn’t like to say much about his talent.","q6"],["‘If I achieve my goals, I always say that I am honoured to do that,’ he says.","q6"],["Ntando knows that some sportspeople would love to reach their goals but aren’t able to.",""],["Ntando could do even better in future Paralympics in Tokyo and Paris.",""],["He would love to get there and win more medals but is realistic.","q7"],["He understands that there is always the possibility of injuring himself beforehand, like there is for any athlete.","q7"],["Some athletes say they’re definitely running at the next Paralympics, but this is something Ntando doesn’t say: he knows he can’t be sure of that.","q7"]],
+[["For Ntando, it’s people who are more important than medals.",""],["He wants to show people that he respects others.","q8"],["If he can respect the person he’s running next to, he says, then everyone watching him on TV at home can respect each other, too.","q8"],["Ntando believes anyone can make a change in society and that it isn’t necessary to be the president of a country.","q9"],["At the time of writing, Ntando is planning to compete at another important para-athletics competition.","q10"]]];
+const Q=[
+["Ntando Mahlangu won a silver medal at the Paralympics in Rio when he was 14 years old.",0],
+["Ntando received his first running blades after winning a national running competition.",2],
+["Before receiving his running blades, Ntando was unable to play football with his friends.",1],
+["Ntando started competing in international sports competitions immediately after receiving his running blades.",1],
+["Ntando has broken a world record and won several medals in his sport.",0],
+["Ntando believes that his success is mainly the result of his natural talent.",1],
+["Ntando is certain that he will compete in the next Paralympic Games in Tokyo and Paris.",1],
+["Ntando believes that respecting other athletes can encourage people watching him on television to respect one another.",0],
+["Ntando thinks that only people in powerful positions, such as presidents, can make a difference in society.",1],
+["Ntando plans to become a professional football player after retiring from para-athletics.",2]];
+const INF=[2,4,6,10],OPTS=["TRUE","FALSE","NOT GIVEN"],N=Q.length,MAXC=106;
+let view=0,score=0,secs=0,timer=null,st;
+const $=id=>document.getElementById(id);
+function reset(){st=Q.map(()=>({sel:null,chk:false,show:false}));score=0;secs=0;view=0;stop()}
+function fmt(){return String(Math.floor(secs/60)).padStart(2,'0')+':'+String(secs%60).padStart(2,'0')}
+function start(){if(!timer&&view>=1&&view<=N)timer=setInterval(()=>{secs++;$('clock').textContent=fmt()},1000)}
+function stop(){clearInterval(timer);timer=null}
+/* reading text with fixed line breaks */
+let nLines=0;
+function build(){let h='',n=0;
+ P.forEach((p,pi)=>{const w=[];p.forEach(([t,k])=>t.split(' ').forEach(x=>w.push([x,k])));
+  let line=[],len=0;let first=true;const flush=()=>{n++;const dn=first?` data-n="${pi+1}"`:'';first=false;h+=`<span class="ln"${dn}>`+line.map(([x,k],i)=>`<span data-e="${k}">${x}${i<line.length-1?' ':''}</span>`).join('')+'</span>';line=[];len=0};
+  w.forEach(o=>{const add=(len?1:0)+o[0].length;if(len+add>MAXC){flush()}len+=(len?1:0)+o[0].length;line.push(o)});
+  flush()});
+ nLines=n;$('read').innerHTML=h}
+function fit(){const r=$('read');if(r.style.display==='none')return;
+ const root=document.documentElement;root.style.setProperty('--fs','100px');root.style.setProperty('--lh','1.5');
+ let mx=0;r.querySelectorAll('.ln').forEach(l=>mx=Math.max(mx,l.scrollWidth));
+ const cs=getComputedStyle(r),aw=r.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+ let fs=Math.max(9,Math.min(30,100*aw/mx));root.style.setProperty('--fs',fs+'px');
+ const ah=r.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom);
+ root.style.setProperty('--lh',Math.max(1.3,Math.min(1.7,ah/(nLines*fs))))}
+function render(){
+ const q=view>=1&&view<=N,s=q?st[view-1]:null;
+ $('hl').textContent=q?`Slide ${view} of ${N}`:'';
+ $('sc').textContent=`Score: ${score}/${N}`;
+ $('fill').style.width=(q?view/N*100:view>N?100:0)+'%';
+ $('clock').textContent=fmt();
+ $('read').style.display=q?'':'none';
+ const side=$('side');side.className='card'+(q?'':' wide');
+ if(view===0){side.innerHTML=`<h2>Instructions</h2><p>In boxes 1–10 on your answer sheet, write:</p><ul><li><b>TRUE</b> – if the statement agrees with the information.</li><li><b>FALSE</b> – if the statement contradicts the information.</li><li><b>NOT GIVEN</b> – if there is no information on this.</li></ul><button class="btn" id="go">Start →</button>`;$('go').onclick=()=>{view=1;start();render()}}
+ else if(view>N){side.innerHTML=`<h2>🏆 Final score</h2><p>You scored <b>${score}/${N}</b>.</p><p>Total time: <b>${fmt()}</b></p><button class="btn" id="pa">Play Again</button>`;$('pa').onclick=()=>{reset();render()}}
+ else{
+  side.innerHTML=`<div class="ins">Read the text again. Choose the correct answer.</div><div>${view}. ${Q[view-1][0]}</div>`+
+  OPTS.map((o,i)=>{let c='opt';if(s.chk){if(i===Q[view-1][1])c+=' ok';else if(i===s.sel)c+=' bad'}else if(i===s.sel)c+=' sel';return `<button class="${c}" data-i="${i}"><span class="badge">${'ABC'[i]}</span>${o}</button>`}).join('')+
+  (s.show&&INF.includes(view)?`<div class="lab">Inferred answer (evaluation/inference)</div>`:'')+
+  `<div class="row"><button class="btn" id="ck" ${s.sel===null||s.chk?'disabled':''}>Check Answers</button><button class="btn alt" id="sa" ${s.chk?'':'disabled'}>Show Answer</button></div>`+
+  `<div class="row"><button class="btn alt" id="pv" ${view===1?'disabled':''}>← Previous</button><button class="btn" id="nx">${view===N?'Finish':'Next →'}</button></div>`;
+  side.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(!s.chk){s.sel=+b.dataset.i;render()}});
+  $('ck').onclick=()=>{s.chk=true;if(s.sel===Q[view-1][1])score++;render()};
+  $('sa').onclick=()=>{s.show=true;render()};
+  $('pv').onclick=()=>{view--;render()};
+  $('nx').onclick=()=>{if(view===N){stop()}view++;render()};
+  fit()}
+ document.querySelectorAll('#read [data-e]').forEach(e=>e.classList.toggle('hl',!!(s&&s.show&&e.dataset.e.split(' ').includes('q'+view))));
+}
+$('bs').onclick=start;$('bp').onclick=stop;
+document.addEventListener('dragstart',e=>e.preventDefault());
+document.addEventListener('selectstart',e=>e.preventDefault());
+window.addEventListener('resize',fit);
+build();reset();render();
+</script></body></html>
